@@ -280,29 +280,6 @@ contactForm?.addEventListener('submit', (e) => {
 });
 
 // ===================================
-// DOWNLOAD CV FUNCTIONALITY
-// ===================================
-
-const downloadCVButtons = document.querySelectorAll('#downloadCV, .btn-secondary[href="#contact"]');
-
-downloadCVButtons.forEach(button => {
-    if (button.textContent.includes('Download CV')) {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // In production, this would link to an actual CV file
-            alert('CV download functionality would be implemented here. Please link to your actual CV file.');
-            
-            // Example of how to trigger a download:
-            // const link = document.createElement('a');
-            // link.href = '/path/to/your/cv.pdf';
-            // link.download = 'Charles_Orukpe_CV.pdf';
-            // link.click();
-        });
-    }
-});
-
-// ===================================
 // CURSOR TRAIL EFFECT (SUBTLE)
 // ===================================
 
