@@ -1,0 +1,5 @@
+# Claude Code session state — not part of the site
+.claude/
+
+# Separate project, not part of this deploy
+sossa/
