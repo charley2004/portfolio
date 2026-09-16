@@ -662,6 +662,35 @@ section {
     line-height: 1.7;
 }
 
+.project-sublist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-sublist li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent-secondary);
+}
+
+.project-sublist strong {
+    color: var(--text-primary);
+}
+
+.project-sublist a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.project-sublist a:hover {
+    text-decoration: underline;
+}
+
 .project-tools {
     display: flex;
     flex-wrap: wrap;
