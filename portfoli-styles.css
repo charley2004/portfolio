@@ -695,6 +695,23 @@ section {
     letter-spacing: 1px;
 }
 
+.project-view-link {
+    display: inline-block;
+    margin-top: 1.2rem;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform var(--transition-fast);
+}
+
+.project-view-link:hover {
+    text-decoration: underline;
+    transform: translateX(4px);
+}
+
 /* ===================================
    SKILLS SECTION
    =================================== */

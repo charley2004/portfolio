@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Charles Orukpe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+
+    <!-- Toolbar -->
+    <div class="detail-toolbar">
+        <div class="detail-toolbar-inner">
+            <a href="index.html" class="toolbar-link">&larr; Back to Portfolio</a>
+            <div class="nav-logo">CO</div>
+        </div>
+    </div>
+
+    <!-- Not found state -->
+    <main class="detail-main" id="notFound" hidden>
+        <div class="container">
+            <p class="not-found-label">Project Not Found</p>
+            <h1 class="not-found-title">We couldn't find that project.</h1>
+            <a href="index.html#projects" class="btn btn-primary">Back to Projects</a>
+        </div>
+    </main>
+
+    <!-- Project detail -->
+    <main class="detail-main" id="detail" hidden>
+        <div class="container">
+
+            <header class="detail-header">
+                <span class="project-category" id="pCategory"></span>
+                <h1 class="detail-title" id="pTitle"></h1>
+                <p class="detail-tagline" id="pTagline"></p>
+                <div class="detail-actions">
+                    <a href="#" target="_blank" class="btn btn-primary" id="pLiveLink" hidden>Visit Live Site</a>
+                    <a href="index.html#projects" class="btn btn-secondary">&larr; All Projects</a>
+                </div>
+            </header>
+
+            <div class="detail-screenshot-wrap" id="pScreenshotWrap" hidden>
+                <img id="pScreenshot" class="detail-screenshot" alt="">
+            </div>
+
+            <section class="detail-section">
+                <h2>Overview</h2>
+                <p id="pOverview" class="detail-overview"></p>
+            </section>
+
+            <section class="detail-section">
+                <h2>Key Features</h2>
+                <ul class="detail-features" id="pFeatures"></ul>
+            </section>
+
+            <section class="detail-section">
+                <h2>Tech Stack</h2>
+                <div class="project-tools" id="pTools"></div>
+            </section>
+
+            <section class="detail-section">
+                <h2>My Role</h2>
+                <p class="detail-role" id="pRole"></p>
+            </section>
+
+            <section class="detail-section detail-outcome-section">
+                <h2>Outcome</h2>
+                <p class="detail-outcome" id="pOutcome"></p>
+            </section>
+
+            <section class="detail-more">
+                <h3>More Projects</h3>
+                <div class="more-projects" id="pMore"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="project-data.js"></script>
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+            const project = slug ? PROJECTS[slug] : null;
+
+            if (!project) {
+                document.getElementById('notFound').hidden = false;
+                return;
+            }
+
+            document.title = project.title + ' | Charles Orukpe';
+            document.getElementById('detail').hidden = false;
+
+            document.getElementById('pCategory').textContent = project.category;
+            document.getElementById('pTitle').textContent = project.title;
+            document.getElementById('pTagline').textContent = project.tagline;
+            document.getElementById('pOverview').textContent = project.overview;
+            document.getElementById('pRole').textContent = project.role;
+            document.getElementById('pOutcome').textContent = project.outcome;
+
+            if (project.liveUrl) {
+                const liveLink = document.getElementById('pLiveLink');
+                liveLink.href = project.liveUrl;
+                liveLink.hidden = false;
+            }
+
+            if (project.screenshot) {
+                document.getElementById('pScreenshotWrap').hidden = false;
+                const img = document.getElementById('pScreenshot');
+                img.src = project.screenshot;
+                img.alt = project.title + ' screenshot';
+            }
+
+            const featuresEl = document.getElementById('pFeatures');
+            project.features.forEach(f => {
+                const li = document.createElement('li');
+                li.textContent = f;
+                featuresEl.appendChild(li);
+            });
+
+            const toolsEl = document.getElementById('pTools');
+            project.tools.forEach(t => {
+                const span = document.createElement('span');
+                span.textContent = t;
+                toolsEl.appendChild(span);
+            });
+
+            // "More Projects" — up to 3 others, cycling from this project's position
+            const slugs = Object.keys(PROJECTS);
+            const idx = slugs.indexOf(slug);
+            const others = [];
+            for (let i = 1; i <= slugs.length && others.length < 3; i++) {
+                const candidate = slugs[(idx + i) % slugs.length];
+                if (candidate !== slug) others.push(candidate);
+            }
+            const moreEl = document.getElementById('pMore');
+            others.forEach(s => {
+                const p = PROJECTS[s];
+                const a = document.createElement('a');
+                a.href = 'project.html?slug=' + s;
+                a.className = 'more-project-card glass-card';
+                a.innerHTML = '<span class="project-category">' + p.category + '</span><h5>' + p.title + '</h5>';
+                moreEl.appendChild(a);
+            });
+        })();
+    </script>
+</body>
+</html>
