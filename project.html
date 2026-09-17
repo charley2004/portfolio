@@ -38,6 +38,7 @@
                 <p class="detail-tagline" id="pTagline"></p>
                 <div class="detail-actions">
                     <a href="#" target="_blank" class="btn btn-primary" id="pLiveLink" hidden>Visit Live Site</a>
+                    <a href="#" target="_blank" class="btn btn-secondary" id="pRepoLink" hidden>View Source on GitHub</a>
                     <a href="index.html#projects" class="btn btn-secondary">&larr; All Projects</a>
                 </div>
             </header>
@@ -105,6 +106,12 @@
                 const liveLink = document.getElementById('pLiveLink');
                 liveLink.href = project.liveUrl;
                 liveLink.hidden = false;
+            }
+
+            if (project.repoUrl) {
+                const repoLink = document.getElementById('pRepoLink');
+                repoLink.href = project.repoUrl;
+                repoLink.hidden = false;
             }
 
             if (project.screenshot) {

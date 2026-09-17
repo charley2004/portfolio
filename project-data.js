@@ -22,29 +22,30 @@ const PROJECTS = {
     },
     "uniconnect": {
         title: "UniConnect",
-        tagline: "University Student Marketplace",
+        tagline: "University Student Marketplace (Concept)",
         category: "Student E-Commerce",
         liveUrl: null,
+        repoUrl: null,
         screenshot: null,
-        overview: "A full-featured e-commerce marketplace exclusively for Nigerian university students — think Jumia, but campus-first. Built as a single-page application with client-side routing and multi-role access.",
+        overview: "A concept and early prototype for an e-commerce marketplace exclusively for Nigerian university students — think Jumia, but campus-first. Planned around a single-page application with client-side routing and multi-role access; not yet built out to a deployable state.",
         features: [
-            "Campus-scoped marketplace across UNILAG, UI, OAU, Covenant, and more",
-            "Multi-role access: buyer, seller, and admin",
-            "Flash sales with live countdown timers",
-            "Persistent shopping cart across sessions",
-            "Site-wide dark mode theming system",
-            "Admin dashboard for platform oversight and seller management"
+            "Planned: campus-scoped marketplace across UNILAG, UI, OAU, Covenant, and more",
+            "Planned: multi-role access — buyer, seller, and admin",
+            "Planned: flash sales with live countdown timers",
+            "Planned: persistent shopping cart across sessions",
+            "Planned: site-wide dark mode theming system",
+            "Planned: admin dashboard for platform oversight and seller management"
         ],
-        tools: ["HTML5 / CSS3", "JavaScript (SPA Router)", "Dark Mode System", "Admin Dashboard", "Seller Portal"],
-        role: "Solo developer — designed the SPA architecture, routing, and all three role-based views.",
-        outcome: "Single-page application architecture with client-side routing, multi-role access (buyer / seller / admin), cart persistence, flash-sale countdown timers, and campus-scoped product discovery."
+        tools: ["HTML5 / CSS3", "JavaScript (SPA Router)"],
+        role: "Solo developer — designed the concept and SPA architecture.",
+        outcome: "Concept-stage prototype outlining a single-page marketplace architecture with client-side routing and multi-role access. Not yet completed or deployed."
     },
     "skillforge": {
         title: "SkillForge",
         tagline: "Gamified Learning Platform",
         category: "EdTech Platform",
-        liveUrl: null,
-        screenshot: null,
+        liveUrl: "https://charley2004.github.io/skillforge/",
+        screenshot: "assets/screenshots/skillforge.jpg",
         overview: "A fully scalable e-learning platform where users access courses, earn XP points, and level up through a gamified progression system. Architected with separate admin, vendor, and student portals.",
         features: [
             "Course creation and approval workflow for vendors",
@@ -61,8 +62,8 @@ const PROJECTS = {
         title: "LSA",
         tagline: "Legit Source Analysis",
         category: "Media & Analytics",
-        liveUrl: null,
-        screenshot: null,
+        liveUrl: "https://charley2004.github.io/lsa/",
+        screenshot: "assets/screenshots/lsa.jpg",
         overview: "A premium football match analysis and stats platform with dedicated pages for results, analysis, about, contact, and disclaimer — built for high-frequency data updates and monetization.",
         features: [
             "Football match analysis and stats pages",
@@ -116,6 +117,7 @@ const PROJECTS = {
         tagline: "Finance, Growth & Wellness App",
         category: "AI-Powered Wellness App",
         liveUrl: null,
+        repoUrl: "https://github.com/charley2004/vitalis",
         screenshot: null,
         overview: "A React Native wellness and productivity app spanning personal finance tracking, habit and routine building, a growth coach, and an AI-powered insights engine built on Claude. The most actively developed app in the portfolio.",
         features: [
@@ -135,8 +137,9 @@ const PROJECTS = {
         tagline: "Travel Packages & Ride Booking",
         category: "Travel & Ride Booking Platform",
         liveUrl: null,
+        repoUrl: "https://github.com/charley2004/voyara-mobile",
         screenshot: null,
-        overview: "A full-stack travel and ride-booking platform — a Node/Express + MongoDB backend handling auth, travel packages, bookings, payments, and rides, paired with a React Native mobile app covering the complete booking flow.",
+        overview: "A full-stack travel and ride-booking platform — a Node/Express + MongoDB backend handling auth, travel packages, bookings, payments, and rides, paired with a React Native mobile app covering the complete booking flow. Backend source: github.com/charley2004/voyara-backend.",
         features: [
             "Travel package browsing and booking",
             "Ride booking flow",
@@ -153,6 +156,7 @@ const PROJECTS = {
         tagline: "Ambient Focus & Meditation App",
         category: "Meditation & Focus App",
         liveUrl: null,
+        repoUrl: "https://github.com/charley2004/foxglove",
         screenshot: null,
         overview: "A meditation and focus app with custom animated UI — breathing circles, particle rings, and glass-morphic components — backed by a curated ambient sound library across calm, focus, nature, and sleep categories.",
         features: [
@@ -170,6 +174,7 @@ const PROJECTS = {
         tagline: "Agency Site",
         category: "Agency / Business Site",
         liveUrl: null,
+        repoUrl: "https://github.com/charley2004/prime-axis",
         screenshot: null,
         overview: "The site for Prime Axis Technology, a development agency — service pages, case-study work items, pricing/FAQ, and a full SEO setup. This is Charles's own agency.",
         features: [
@@ -187,8 +192,8 @@ const PROJECTS = {
         title: "UniLag Update",
         tagline: "Hostel & Admissions Hub",
         category: "Student Resource Platform",
-        liveUrl: null,
-        screenshot: null,
+        liveUrl: "https://charley2004.github.io/UNU/",
+        screenshot: "assets/screenshots/unilag-update.jpg",
         overview: "A resource platform for University of Lagos students covering hostel/accommodation finding, JAMB & Post-UTME guidance, and admission consulting — with dedicated pages for events, opportunities, and services.",
         features: [
             "Hostel and accommodation finder for UNILAG students",
@@ -204,8 +209,8 @@ const PROJECTS = {
         title: "Frenchie's Touch",
         tagline: "Luxury Barber Experience",
         category: "Small Business Site",
-        liveUrl: null,
-        screenshot: null,
+        liveUrl: "https://charley2004.github.io/Frenchies/",
+        screenshot: "assets/screenshots/frenchies-touch.jpg",
         overview: "A clean marketing site for a luxury barbershop brand, built quickly with Tailwind CSS — home and about pages with a focused, minimal design.",
         features: [
             "Home page with brand-focused hero and service highlights",
